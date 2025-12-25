@@ -1,4 +1,6 @@
-import { ShoppingCart, Bell, User, Search, Menu, ChevronDown } from 'lucide-react';
+import React from 'react'
+import AddToCart from './AddToCart'
+import { ShoppingCart, Bell, Search, Menu } from 'lucide-react';
 
 
 function Header() {
@@ -6,8 +8,7 @@ function Header() {
     <header className="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm shadow-slate-900/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-18 py-3">
-          
-          {/* Left: Brand / Logo */}
+
           <div className="flex items-center gap-4">
             <button className="p-2 rounded-xl lg:hidden hover:bg-slate-100 text-slate-600 transition-colors">
               <Menu size={22} />
@@ -22,7 +23,6 @@ function Header() {
             </div>
           </div>
 
-          {/* Center: Search Bar */}
           <div className="hidden md:flex flex-1 max-w-lg mx-12">
             <div className="relative w-full group">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -36,29 +36,19 @@ function Header() {
             </div>
           </div>
 
-          {/* Right: Actions */}
           <div className="flex items-center gap-1.5 sm:gap-3">
-            {/* Search Toggle for Mobile */}
             <button className="md:hidden p-2.5 text-slate-500 hover:text-indigo-600 hover:bg-indigo-50 rounded-xl transition-all">
               <Search size={20} />
             </button>
-
-            {/* Notifications */}
             <button className="relative p-2.5 text-slate-500 hover:text-indigo-600 hover:bg-indigo-50 rounded-xl transition-all">
               <Bell size={20} />
               <span className="absolute top-2.5 right-2.5 block h-2.5 w-2.5 rounded-full bg-rose-500 ring-2 ring-white"></span>
             </button>
 
-            {/* Cart Icon with Accent Badge */}
-            <button className="relative p-2.5 text-slate-500 hover:text-indigo-600 hover:bg-indigo-50 rounded-xl transition-all">
-              <ShoppingCart size={20} />
-              <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-indigo-600 text-[10px] font-bold text-white shadow-md shadow-indigo-200 ring-2 ring-white">
-                12
-              </span>
-            </button>
+            <AddToCart />
 
-         
-          
+
+
           </div>
         </div>
       </div>
